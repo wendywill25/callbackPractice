@@ -145,15 +145,15 @@ contains(names, 'Colt', function(result){
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-var uniqArr = function(array) {
-    var newArr = array;
-    for (var i = ); i<array.length; i++;) {
-      for(var j= i+1; j<array.length; j++) {
-          if(newArr[i === newArr[j]])
+var uniq = function(arr, cb) {
+    var newNames = [];
+    for (var i = 0; i < arr.length; i++) {
+     if(newNames.indexOf(arr[i]) === -1) {
+        newNames.push(arr[i]);
       }
-}
-
-}
+    } 
+  return cb(newNames);
+};
 
 
 
@@ -174,6 +174,11 @@ uniq(names, function(uniqArr){
 
 
     //Code Here for each
+var each = function(arr, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    cb(arr[i], i);
+  }
+}; 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -191,6 +196,15 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
+
+ var getUserById = function(arr, id, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === id) {
+      return cb(arr[i]); 
+    }
+  }
+  return false;
+};
 
 var users = [
   {
