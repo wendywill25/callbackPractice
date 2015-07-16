@@ -31,7 +31,13 @@ first(names, function(firstName){
   console.log('The first name in names is ', firstName)
 });
 
+function first(names, cb) {
+  cb(names[0]);
+}
 
+first(names, function(firstName){
+  console.log("The first name in names is ', firstname")
+}};
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
@@ -45,7 +51,13 @@ last(names, function(lastName){
   console.log('The last name in names is ', lastName);
 });
 
+function last(names, cb) {
+  cb(names[names.length -1]);
+}
 
+last(names, function(lastName) {
+  console.log("This last name in names is ', firstname")
+}};
 
 
 
@@ -54,14 +66,24 @@ last(names, function(lastName){
 
 
 
-
-
   //Code Here for multiply
+
+
+
+//define the function
+
+function multiply(firstNum, secondNum, cb) {
+  cb(firstNum * secondNum);
+}
+
+//invoke your function (complete)
 
 multiply(4, 3, function(answer){
   console.log('The answer is ', answer); //should console.log 12
-})
+});
 
+
+  
 
 
 
@@ -75,6 +97,33 @@ multiply(4, 3, function(answer){
   //Code Here for contains
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+//define the function:
+
+f//1.Solution
+var contains = function(array, searchName, cb) {
+    var result = false;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === searchName) {
+            result = true;
+        }
+    }
+    cb(result);
+};
+
+//2.Solution
+var contains = function(array, searchName, cb) {
+  cb(array.indexOf(searchName) !== -1)  
+};
+
+// function(result){
+//   if(result === true){
+//     console.log('Colt is in the array');
+//   } else {
+//     console.log('Colt is not in the array');
+//   }
+// }
+
 contains(names, 'Colt', function(result){
   if(result === true){
     console.log('Colt is in the array');
@@ -95,6 +144,21 @@ contains(names, 'Colt', function(result){
     //Code Here for uniq
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+var uniqArr = function(array) {
+    var newArr = array;
+    for (var i = ); i<array.length; i++;) {
+      for(var j= i+1; j<array.length; j++) {
+          if(newArr[i === newArr[j]])
+      }
+}
+
+}
+
+
+
+
+
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
@@ -103,7 +167,8 @@ uniq(names, function(uniqArr){
 
 
 
-/* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
+/* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */ 
+//Can't use indexOf 
 
 
 
